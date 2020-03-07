@@ -16,6 +16,9 @@ RUN apt-get update && \
     && apt-get clean
 RUN pip3 --no-cache-dir install --upgrade awscli
 
+# Allow circleci user to own /usr/local/include required by mmake
+RUN chown -R circleci /usr/local/include
+
 USER circleci
 
 # Go tooling
