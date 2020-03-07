@@ -24,4 +24,5 @@ USER circleci
 # Go tooling
 RUN go get github.com/gobuffalo/packr/v2/... && \
     go get github.com/tj/mmake/cmd/mmake && \
+    go get github.com/securego/gosec/cmd/gosec && \
     GO111MODULE=on go get github.com/sonatype-nexus-community/nancy
