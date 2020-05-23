@@ -13,6 +13,7 @@ RUN apt-get update && \
         less \
         ca-certificates \
     && pip3 install --upgrade pip \
+    && apt-get install hugo \
     && apt-get clean
 RUN pip3 --no-cache-dir install --upgrade awscli
 
