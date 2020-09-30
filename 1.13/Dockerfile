@@ -17,6 +17,11 @@ RUN apt-get update && \
     && apt-get clean
 RUN pip3 --no-cache-dir install --upgrade awscli
 
+RUN wget --quiet https://releases.hashicorp.com/terraform/0.12.13/terraform_0.12.13_linux_amd64.zip \
+  && unzip terraform_0.12.13_linux_amd64.zip \
+  && mv terraform /usr/bin \
+  && rm terraform_0.12.13_linux_amd64.zip
+
 # Allow circleci user to own /usr/local/include required by mmake
 RUN chown -R circleci /usr/local/include
 
